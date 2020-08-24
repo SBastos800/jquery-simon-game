@@ -9,7 +9,11 @@ $(".btn").click(function() {
     userClickedPattern.push(userChosenColour);
 
     playSound(userChosenColour);
+
+    animatePress(userChosenColour);
 })
+
+
 
 const nextSequence = () => {
     const randomNumber = Math.floor((Math.random() * 3) + 1);
@@ -24,6 +28,15 @@ const nextSequence = () => {
 const playSound = (name) => {
     const audio = new Audio("sounds/" + name + ".mp3");
     audio.play();
+}
+
+const animatePress = currentColour => {
+    $("#" + currentColour).addClass("pressed");
+
+    setTimeout( () => {
+        $("#" + currentColour).removeClass("pressed");
+    }, 100);
+
 }
 
 // $('#green').click(() => {

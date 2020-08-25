@@ -44,6 +44,7 @@ const checkAnswer = (currentLevel) => {
 
           console.log("wrong");
           playSound("wrong"); 
+
           $("body").addClass("game-over");
           
           setTimeout(() => {
@@ -58,6 +59,8 @@ const checkAnswer = (currentLevel) => {
 }
 
 const nextSequence = () => {
+
+    userClickedPattern = [];
 
     level++;
 
@@ -85,6 +88,12 @@ const animatePress = currentColour => {
     }, 100);
 
 }
+
+const startOver = () => {
+    level = 0;
+    gamePattern = [];
+    started = false;
+    }
 
 
 

@@ -41,7 +41,18 @@ const checkAnswer = (currentLevel) => {
         }
 
     } else {
-        console.log("wrong");
+
+          console.log("wrong");
+          playSound("wrong"); 
+          $("body").addClass("game-over");
+          
+          setTimeout(() => {
+            $("body").removeClass("game-over");
+          }, 200);
+          
+          $("#level-title").text("Game Over, Press Any Key to Restart");
+
+          startOver();
     }
 
 }
@@ -74,6 +85,8 @@ const animatePress = currentColour => {
     }, 100);
 
 }
+
+
 
 
 

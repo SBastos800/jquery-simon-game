@@ -1,11 +1,9 @@
 const buttonColours = ["red", "blue", "green", "yellow"];
 
 let gamePattern = [];
-
 let userClickedPattern = [];
 
 let started = false;
-
 let level = 0;
 
 $(document).keypress(() => {
@@ -37,7 +35,6 @@ const checkAnswer = (currentLevel) => {
             setTimeout(() => {
                 nextSequence();
             }, 1000);
-
         }
 
     } else {
@@ -55,7 +52,6 @@ const checkAnswer = (currentLevel) => {
 
           startOver();
     }
-
 }
 
 const nextSequence = () => {
@@ -86,14 +82,13 @@ const animatePress = currentColour => {
     setTimeout(() => {
         $("#" + currentColour).removeClass("pressed");
     }, 100);
-
 }
 
 const startOver = () => {
     level = 0;
     gamePattern = [];
     started = false;
-    }
+}
 
 
 
